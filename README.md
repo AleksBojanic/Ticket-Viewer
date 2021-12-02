@@ -1,5 +1,5 @@
 # Coding Challenge for Zendesk
-###Intern Coding Challenge for Zendesk. A simple ticket viewing application that connects to the Zendesk API.
+Intern Coding Challenge for Zendesk. A simple ticket viewing application that connects to the Zendesk API.
 
 * Author : Aleksandar Bojanic
 * Language : Java
@@ -9,7 +9,7 @@ install the following libraries:
 
 * JDK 1.17
 * JUnit 5
-*json-20210307.jar
+* json-20210307.jar
 
 How to run this app (on Windows)
 * Clone this repository or download it onto your computer;
