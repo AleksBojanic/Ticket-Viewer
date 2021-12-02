@@ -8,5 +8,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="codehaus.jackson.mapper.asl" level="application" />
+    <orderEntry type="library" name="junit" level="project" />
+    <orderEntry type="library" name="junit.jupiter" level="application" />
   </component>
 </module>

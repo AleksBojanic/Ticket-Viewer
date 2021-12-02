@@ -1,3 +1,5 @@
+package main;
+
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -14,10 +16,11 @@ public class MenuController {
 
     //This method runs the initial collection of credentials needed in order to connect to the Zendesk server.
     public ConnectionManager runAuthMenu() {
+        System.out.println("Hello, and welcome to the ticket viewer!\n");
         System.out.println("In order to interact with the Zendesk server, we need some of your information.\n");
         System.out.println("Please provide your subdomain:");
         String subdomain = keyboard.nextLine();
-        System.out.println("Please enter your username (hint: your username should be the email address you registered with):");
+        System.out.println("Please enter your username (hint: your username should be the email address you registered with Zendesk):");
         String username = keyboard.nextLine();
         System.out.println("Please enter your password:");
         String pass = keyboard.nextLine();
@@ -29,16 +32,19 @@ public class MenuController {
 
         ConnectionManager cm = new ConnectionManager(new Credentials(subdomain, authString));
         if (cm.checkCredentials()!= null) {
-            System.out.println("Success! You now have access to the Ticket Viewer");
+            System.out.println("Success! You now have access to the Ticket Viewer! \n");
         }
         else {
-            System.out.println("Sorry, these are not valid credentials, or we may have trouble communicating with the server ");
-            System.out.println("Please verify your credentials and try again");
+            System.out.println("                                                            ");
+            System.out.println("Sorry, we have not been able to establish a good connection to the server.");
+            System.out.println("Please review any errors reported, and try again.");
+
             System.exit(-1);
         }
         return(cm);
     }
 
+    //This method runs the single ticket menu, asking users to provide the corresponding ID to view a ticket.
     public int runSingleTicketMenu(ConnectionManager cm) {
         System.out.println("Please provide the ticket id (hint: field name is \"id\"):");
         String id = keyboard.nextLine();
@@ -61,10 +67,10 @@ public class MenuController {
             prettyPrint(result);
             while (true) {
                 System.out.println("We have displayed all the tickets on this page for you.");
-                System.out.println("Press 1 to view the next page of tickets:");
-                System.out.println("Press 2 to view the previous page of tickets:");
-                System.out.println("Type 'menu' to return back to the main menu");
-                System.out.println("Type 'quit' to exit");
+                System.out.println("* Press 1 to view the next page of tickets:");
+                System.out.println("* Press 2 to view the previous page of tickets:");
+                System.out.println("* Type 'menu' to return back to the main menu");
+                System.out.println("* Type 'quit' to exit");
                 String choice = keyboard.nextLine();
                 JsonNode checkResult;
                 switch (choice) {
@@ -117,12 +123,11 @@ public class MenuController {
     public int runMainMenu(ConnectionManager cm) {
         Integer repeatOrNot = MenuController.REPEAT;
         try {
-            System.out.println("Welcome to Zendesk's Coding Challenge, the ticket viewer.");
             while (repeatOrNot != MenuController.QUIT) {
                 System.out.println("Please select one of the following options:");
-                System.out.println("Press 1 to view all tickets");
-                System.out.println("Press 2 to view an individual ticket");
-                System.out.println("Type 'quit' to exit");
+                System.out.println("* Press 1 to view all tickets");
+                System.out.println("* Press 2 to view an individual ticket");
+                System.out.println("* Type 'quit' to exit");
                 String choice = keyboard.nextLine();
 
                 switch (choice) {
@@ -133,6 +138,7 @@ public class MenuController {
                         repeatOrNot = runSingleTicketMenu(cm);
                         break;
                     case "quit":
+                        System.out.println("Thank you for using Zendesk Ticket Viewer. Goodbye.");
                         return (MenuController.QUIT);
                     default:
                         System.out.println("Sorry, that does not seem to be a valid command. Could you please try again?");

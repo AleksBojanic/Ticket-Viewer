@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="junit" type="repository">
+    <properties maven-id="junit:junit:4.13">
+      <exclude>
+        <dependency maven-id="junit:junit" />
+        <dependency maven-id="org.hamcrest:hamcrest-core" />
+      </exclude>
+    </properties>
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
