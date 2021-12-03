@@ -9,8 +9,8 @@ import java.util.Base64;
 import org.codehaus.jackson.JsonNode;
 import org.codehaus.jackson.map.ObjectMapper;
 
-import javax.security.sasl.AuthenticationException;
-
+// This class encapsulates the knowledge of the Zendesk API and how to connect to it and how to retrieve data back
+// and forth. This class needs access to credentials that need to be passed in for proper functionality.
 public class ConnectionManager {
     // These are the starting points for URLs to get a ticket list, and individual tickets.
     private String baseTicketListURL = ".zendesk.com/api/v2/tickets.json?page[size]=";
@@ -51,8 +51,10 @@ public class ConnectionManager {
                 .toString();
     }
 
-    //This method makes a REST call, adds the credentials and returns the JsonNode.
+    // This method makes a generic REST call, adds the credentials and returns the JsonNode.
     // It is not intended to be used outside of this class, hence it is private.
+    // This method would be too powerful as it allows to pass in any URL, so we are keeping it private.
+    // Other classes can interact with more friendly methods such as getTicket, ...
     private JsonNode makeRESTCall(String urlString) {
         int status = 0;
         try {
@@ -94,25 +96,26 @@ public class ConnectionManager {
         }
             return null;
     }
-    //simple call (we are using get jobs to verify credentials
+    // simple call (we are using get jobs to verify credentials
     public JsonNode checkCredentials() {
         return makeRESTCall(ticketListURL);
     }
 
-    //calls that are handling ticket list requests
+    // calls that are handling ticket list requests
     public JsonNode getTickets() {
         return makeRESTCall(ticketListURL);
     }
-    //paging requests for next ticket
+    // paging requests for next ticket
     public JsonNode getNextTickets(JsonNode node) {
 
         return makeRESTCall(node.path("links").path("next").getTextValue());
     }
-    //paging requests for previous ticket
+    // Paging requests for previous ticket
     public JsonNode getPrevTickets(JsonNode node) {
 
         return makeRESTCall(node.path("links").path("prev").getTextValue());
     }
+    // calls that are handling a SINGLE ticket request.
     public JsonNode getTicket(String ticketID) {
         String singleTicketURL = (new StringBuilder())
                 .append(ticketURL)
@@ -121,6 +124,9 @@ public class ConnectionManager {
                 .toString();
         return makeRESTCall(singleTicketURL);
     }
+    // I do have to admit this is a bit of a hack again, so here we try to distinguish from various error exceptions,
+    // and there is a huge assumption that if you cannot ping www.google.com, then you do not have access to internet
+    // connection.
     private boolean hasInternetConnectivity() {
         boolean result = false;
         try {

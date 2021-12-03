@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbb97650-5c78-45d9-b324-f009da213edf" name="Changes" comment="">
+    <list default="true" id="cbb97650-5c78-45d9-b324-f009da213edf" name="Changes" comment="+added more exception handling&#10;+added 1 test&#10;+reformatted some print messages">
       <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/junit.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/ConnectionManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tests/TestCredentials.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/RequestTicketTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/TestResources.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CodingChallengeZendesk.iml" beforeDir="false" afterPath="$PROJECT_DIR$/CodingChallengeZendesk.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodingChallengeZendesk/ConnectionManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodingChallengeZendesk/Credentials.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodingChallengeZendesk/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/CodingChallengeZendesk/MenuController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Credentials.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Credentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/ConnectionManagerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tests/ConnectionManagerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tests/TestCredentials.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -73,7 +69,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionManagerTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConnectionManagerTest.testBasicConnectivity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingChallengeZendesk" />
       <extension name="coverage">
         <pattern>
@@ -83,13 +79,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.ConnectionManagerTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="METHOD_NAME" value="testBasicConnectivity" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests in CodingChallengeZendesk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RequestTicketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CodingChallengeZendesk" />
       <extension name="coverage">
         <pattern>
@@ -98,7 +94,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestTicketTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestTicketTest.testSingleTicketRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingChallengeZendesk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestTicketTest" />
+      <option name="METHOD_NAME" value="testSingleTicketRequest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RequestTicketTest.testTicketsRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CodingChallengeZendesk" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.RequestTicketTest" />
+      <option name="METHOD_NAME" value="testTicketsRequest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -106,8 +135,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.tests in CodingChallengeZendesk" />
-        <item itemvalue="JUnit.ConnectionManagerTest.test" />
+        <item itemvalue="JUnit.RequestTicketTest" />
+        <item itemvalue="JUnit.RequestTicketTest.testTicketsRequest" />
+        <item itemvalue="JUnit.ConnectionManagerTest.testBasicConnectivity" />
+        <item itemvalue="JUnit.RequestTicketTest.testSingleTicketRequest" />
       </list>
     </recent_temporary>
   </component>
@@ -120,6 +151,14 @@
       <option name="presentableId" value="Default" />
       <updated>1638308534581</updated>
     </task>
+    <task id="LOCAL-00001" summary="+added more exception handling&#10;+added 1 test&#10;+reformatted some print messages">
+      <created>1638427643317</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638427643317</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,20 +173,8 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/ConnectionManager.java</url>
-          <line>77</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/ConnectionManager.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="+added more exception handling&#10;+added 1 test&#10;+reformatted some print messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="+added more exception handling&#10;+added 1 test&#10;+reformatted some print messages" />
   </component>
 </project>

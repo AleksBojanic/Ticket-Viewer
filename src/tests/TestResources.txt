@@ -1,0 +1,6 @@
+(Please replace this whole line with your subdomain if you would like to run the tests.)
+(Please replace this whole line with your username if you would like to run the tests.)
+23 (Please replace this whole line with the ticket ID you would like to test, if you would like to run the tests.) 23 is left in as it is not sensitive information
+"sunt enim pariatur id id" (NOTE: The quotation marks are needed) Please replace this whole line with the expected subject line of the corresponding ticket ID if you would like to run the tests.)
+25 (Please replace the amount of tickets per page if you would like to run the tests.)
+

@@ -1,5 +1,6 @@
 package main;
 
+// This is a data holder class has the credentials needed for authentication.
 public class Credentials {
 private String subdomain;
 private String authCredentials;
@@ -11,7 +12,7 @@ public String getSubdomain() {
 public String getAuthCredentials() {
     return authCredentials;
 }
-//I don't want main.Credentials to be created without any parameters, so this is private.
+//We don't want main.Credentials to be created without any parameters, so this is private.
 private Credentials() {
 }
 

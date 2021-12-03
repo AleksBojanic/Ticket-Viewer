@@ -5,6 +5,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 
 import java.util.Scanner;
 
+// This class is responsible for managing interactions and display to the user.
+// It drives the user interaction, and deals with data presentation.
 public class MenuController {
     public static int QUIT = 0;
     public static int REPEAT = 1;
@@ -113,7 +115,9 @@ public class MenuController {
             return MenuController.QUIT;
         }
     }
-
+    //When paging and next in previous page, you could go beyond the edge. In those cases the server will return a
+    //different format of a Json object, which is more or less empty. We try to recognize such a situation, by checking
+    //if the response has /link/prev value
     private boolean isValidListJSON(JsonNode checkResult) {
         Boolean test = checkResult.path("links").path("prev").isNull();
         return (!test);
@@ -154,6 +158,8 @@ public class MenuController {
 
 
     //This is a utility method, created to make the JSON data easier to read/understand.
+    //In order to save time, I am assuming that the standard JSon "pretty print" is readable enough to satisfy the
+    //requirements. If I get more time I might refactor this method in order to make it even more user friendly.
     private void prettyPrint(JsonNode node){
         ObjectMapper mapper = new ObjectMapper();
         try {
