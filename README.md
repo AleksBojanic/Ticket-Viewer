@@ -1,4 +1,4 @@
-# Coding Challenge for Zendesk
+# Ticket Viewer Zendesk
 Intern Coding Challenge for Zendesk. A simple CLI based ticket viewing application that connects to the Zendesk API.
 
 * Author : Aleksandar Bojanic
