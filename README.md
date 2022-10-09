@@ -1,5 +1,5 @@
 # Ticket Viewer Zendesk
-Intern Coding Challenge for Zendesk. A simple CLI based ticket viewing application that connects to the Zendesk API.
+Intern Coding Challenge for Zendesk. A ticket viewing application that connects to the Zendesk API, requests all support tickets for the account and displays them in a list.
 
 * Author : Aleksandar Bojanic
 * Language : Java
